@@ -1,3 +1,11 @@
+ESX = nil
+
+if (Config.ESXVerison == "newESX") then
+    ESX = exports['es_extended']:getSharedObject()
+else
+    TriggerEvent("esx:getSharedObject", function(obj) ESX = obj end)
+end
+
 local function HasJob(xPlayer)
     for k,v in pairs(Config.AlertJobs) do
         if (xPlayer.job.name == v) then return true end
