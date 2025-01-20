@@ -70,6 +70,7 @@ CreateThread(function()
         is_aiming, ped = GetEntityPlayerIsFreeAimingAt(PlayerId(-1))
         if (not is_aiming) then return true end
         if (IsPedDeadOrDying(ped) or not DoesEntityExist(ped)) or IsPedInAnyVehicle(ped) then return true end
+        if (#(GetEntityCoords(PlayerPedId()) - GetEntityCoords(ped)) > Config.MaxDistance) then return true end
         if (peds[ped] or IsPedAPlayer(ped)) then return true end
         if (GetEntityScript(ped) ~= nil) then return true end
         if (IsWeaponBlacklist(GetSelectedPedWeapon(PlayerPedId()))) then return true end

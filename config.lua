@@ -1,6 +1,7 @@
 Config = {}
 Config.ESXVerison = "newESX" -- esx or newESX
 Config.RobTime = 10 -- temps en seconde
+Config.MaxDistance = 5
 Config.rewards = {
     {type = "item", name = "bread", amount = 1},
     {type = "money", acount = "money", amount = 2500},
